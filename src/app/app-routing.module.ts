@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
+import { ToolbarComponent } from "./toolbar/toolbar.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
