@@ -21,6 +21,7 @@ import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMakesComponent } from './my-makes/my-makes.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     PersonalDataComponent,
     MyRecipesComponent,
     MyMakesComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
