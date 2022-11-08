@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- fixedInViewport -->
+  <mat-sidenav #drawer class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'profile'">Profile</a>
+      <a mat-list-item [routerLink]="'personal-data'">Personal Data</a>
+      <a mat-list-item [routerLink]="'my-recipes'">My Recipes</a>
+      <a mat-list-item [routerLink]="'my-makes'">My Makes</a>
+      <a mat-list-item [routerLink]="'favorites'">Favorites</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="''"> Home </a>
+        <a mat-button [routerLink]="'/recipes'"> Recipes </a>
+        <a mat-button [routerLink]="'/makes'"> Makes </a>
+        <a mat-button [routerLink]="'/contact'"> Contact </a>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
