@@ -3,11 +3,12 @@
     display: flex;
     flex: content;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    position: sticky;
     }
 
  .center > a {
 
-    padding: 50px;
+    padding: 0px 50px 0px 50;
 
  }   
