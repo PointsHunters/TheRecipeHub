@@ -10,6 +10,7 @@ import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMakesComponent } from './my-makes/my-makes.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      // {path: '', redirectTo: 'profile'},
+      // {path: 'dashboard', redirectTo: 'profile'},
+      {path: '', component: DashboardContentComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'personal-data', component: PersonalDataComponent},
       {path: 'my-recipes', component: MyRecipesComponent},

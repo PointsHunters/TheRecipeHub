@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button fxShow.sm="true"  fxShow.gt-md="true" fxShow="false" (click)="sidenav.toggle()">
+    <button mat-icon-button fxShow.sm="true" fxShow.gt-md="true" fxShow="false" (click)="sidenav.toggle()">
       <mat-icon *ngIf="!sidenav.opened">
           menu
       </mat-icon>
@@ -18,32 +18,47 @@
     </div>
 </mat-toolbar>
 
-<mat-sidenav-container  fxShow.sm="false"  fxShow.gt-md="false" fxShow="true">
+<mat-sidenav-container  fxShow.sm="false" fxShow.gt-md="false" fxShow="true">
     <mat-sidenav #sidenav="matSidenav" mode="side" opened="true" class="mat-elevation-z8">
-        <button mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
-        </button>
-        <button mat-button class="menu-button">
+        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+        <h4 class="name">John Smith</h4>
+        <p class="designation">Software Engineer</p>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" [routerLink]="'./profile'">
             <mat-icon>person</mat-icon>
             <span>Profile</span>
         </button>
-        <button mat-button class="menu-button">
-            <mat-icon>info</mat-icon>
-            <span>About</span>
+        <button mat-button class="menu-button" [routerLink]="'./personal-data'">
+            <mat-icon>manage_accounts</mat-icon>
+            <span>Personal Data</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="'./my-recipes'">
+            <mat-icon>list_alt</mat-icon>
+            <span>My Recipes</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="'./my-makes'">
+            <mat-icon>list_alt</mat-icon>
+            <span>My Makes</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="'./favorites'">
+            <mat-icon>favorite</mat-icon>
+            <span>Favorites</span>
         </button>
 
-        <mat-divider></mat-divider>
+        <!-- <mat-divider></mat-divider>
 
         <button mat-button class="menu-button">
             <mat-icon>help</mat-icon>
             <span>Help</span>
-        </button>
+        </button> -->
 
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
-            Main content here!!
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

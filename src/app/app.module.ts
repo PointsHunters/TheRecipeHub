@@ -22,6 +22,7 @@ import { MyMakesComponent } from './my-makes/my-makes.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardSidenavComponent } from './dashboard-sidenav/dashboard-sidenav.component';
+import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DashboardSidenavComponent } from './dashboard-sidenav/dashboard-sidenav
     MyMakesComponent,
     FavoritesComponent,
     ToolbarComponent,
-    DashboardSidenavComponent
+    DashboardSidenavComponent,
+    DashboardContentComponent
   ],
   imports: [
     BrowserModule,
