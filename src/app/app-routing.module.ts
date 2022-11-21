@@ -27,8 +27,8 @@ const routes: Routes = [
       {path: 'favorites', component: FavoritesComponent}
     ]
   },
+  {path: 'contact', component: ContactComponent},
   {path: '**', component: ErrorComponent},
-  {path: 'contact', component: ContactComponent}
 ];
 
 @NgModule({
