@@ -23,6 +23,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardSidenavComponent } from './dashboard-sidenav/dashboard-sidenav.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,10 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
