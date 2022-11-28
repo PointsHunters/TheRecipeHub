@@ -9,13 +9,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMakesComponent } from './my-makes/my-makes.component';
@@ -23,7 +23,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DashboardSidenavComponent } from './dashboard-sidenav/dashboard-sidenav.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
