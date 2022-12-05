@@ -1,9 +1,20 @@
-<mat-form-field appearance="outline">
-    <mat-label>Username</mat-label>
-    <input matInput>
-</mat-form-field>
-<mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-</mat-form-field>
+<mat-grid-list cols="1">
+    <mat-grid-tile class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <button mat-raised-button color="primary">Save</button>
+    </mat-grid-tile>
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list>
