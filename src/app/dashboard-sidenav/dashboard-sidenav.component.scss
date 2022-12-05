@@ -9,15 +9,19 @@ mat-sidenav {
     text-align: center;
 }
 
+button {
+    color: white !important;
+}
+
 .content {
-    height: calc(100vh - 98px);
+    min-height: calc(100vh - 98px);
     border-radius: 10px;
     margin: 16px;
     margin-left: 32px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     font-size: 2rem;
     color: lightgray;
@@ -62,3 +66,26 @@ mat-divider {
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+// Toolbar
+.center {
+    // display: flex;
+    // flex: content;
+    // flex-direction: row;
+    // align-items: center;
+    // position: sticky;
+ 
+    display: flex;
+    flex-direction: row; // fxLayout
+    flex-wrap: wrap; //fxLayout
+    box-sizing: border-box;
+    align-content: stretch; // fxLayoutAlign
+    align-items: stretch; // fxLayoutAlign
+    justify-content: flex-start; // fxLayoutAlign
+    
+    a {
+       padding: 0px 50px 0px 50;
+       color: white !important;
+    }
+ } 
+ 
