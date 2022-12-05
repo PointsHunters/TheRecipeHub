@@ -1,61 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ErrorComponent } from './error/error.component';
-import { ContactComponent } from './contact/contact.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
-import { MyMakesComponent } from './my-makes/my-makes.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { DashboardSidenavComponent } from './dashboard-sidenav/dashboard-sidenav.component';
-import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DashboardComponent,
-    ProfileComponent,
-    ErrorComponent,
-    ContactComponent,
-    PersonalDataComponent,
-    MyRecipesComponent,
-    MyMakesComponent,
-    FavoritesComponent,
-    ToolbarComponent,
-    DashboardSidenavComponent,
-    DashboardContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
