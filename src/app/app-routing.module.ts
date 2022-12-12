@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ErrorComponent } from './error/error.component';
-import { ContactComponent } from './contact/contact.component';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
-import { MyMakesComponent } from './my-makes/my-makes.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+import { HomeComponent } from './shared/home/home.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
+import { ProfileComponent } from './shared/profile/profile.component';
+import { ErrorComponent } from './shared/error/error.component';
+import { ContactComponent } from './shared/contact/contact.component';
+import { PersonalDataComponent } from './shared/personal-data/personal-data.component';
+import { MyRecipesComponent } from './shared/my-recipes/my-recipes.component';
+import { MyMakesComponent } from './shared/my-makes/my-makes.component';
+import { FavoritesComponent } from './shared/favorites/favorites.component';
+import { DashboardContentComponent } from './shared/dashboard-content/dashboard-content.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

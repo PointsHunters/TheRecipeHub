@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardContentComponent implements OnInit {
 
+  dashboardz.home = true;
+
   constructor() { }
 
   ngOnInit(): void {
