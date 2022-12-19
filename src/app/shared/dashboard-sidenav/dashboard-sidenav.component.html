@@ -26,35 +26,36 @@
         <p class="designation">Software Engineer</p>
 
         <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button" [routerLink]="'./'" [class.active]="dashboardz.home === true">
+        
+        <!-- [class.active]="dashboardz.home === true" -->
+        <button mat-button class="menu-button active" [routerLink]="'./'"> 
             <mat-icon>dashboard</mat-icon>
             <span>Dashboard</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="'./profile'" [class.active]="dashboardz.profile === true">
+        <button mat-button class="menu-button" [routerLink]="'./profile'">
             <mat-icon>person</mat-icon>
             <span>Profile</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="'./personal-data'" [class.active]="dashboardz.personal === true">
+        <button mat-button class="menu-button" [routerLink]="'./personal-data'">
             <mat-icon>manage_accounts</mat-icon>
             <span>Personal Data</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="'./my-recipes'" [class.active]="dashboardz.recipes === true">
+        <button mat-button class="menu-button" [routerLink]="'./my-recipes'">
             <mat-icon>list_alt</mat-icon>
             <span>My Recipes</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="'./my-makes'" [class.active]="dashboardz.makes === true">
+        <button mat-button class="menu-button" [routerLink]="'./my-makes'">
             <mat-icon>list_alt</mat-icon>
             <span>My Makes</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="'./favorites'" [class.active]="dashboardz.favorites === true">
+        <button mat-button class="menu-button" [routerLink]="'./favorites'">
             <mat-icon>favorite</mat-icon>
             <span>Favorites</span>
         </button>
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button" [class.active]="dashboardz.settings === true">
+        <button mat-button class="menu-button">
             <mat-icon>settings</mat-icon>
             <span>Settings</span>
         </button>

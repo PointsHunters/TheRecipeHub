@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -38,6 +39,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
+    MatCardModule,
   ],
 })
 
