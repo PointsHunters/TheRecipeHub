@@ -1,27 +1,45 @@
-# TheRecipeHub
+# TheRecipeHub - Angular 15.0.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+TheRecipeHub is an Angular 15.0.0 project that allows users to search, view, and create their own recipes. This project is built using Angular 15.0.0, and it is designed to be responsive and user-friendly.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Search for recipes by keyword or ingredient
+- View detailed information about a recipe including ingredients, instructions, and user reviews
+- Create and save your own recipes
+- User authentication and authorization
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get started with TheRecipeHub, you will need to have Node.js and Angular CLI installed on your computer.
 
-## Build
+1. Clone this repository to your local machine:
+```
+git clone https://github.com/PointsHunters/TheRecipeHub.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install the necessary dependencies by running:
+```
+npm install
+```
 
-## Running unit tests
+3. Start the Angular development server by running:
+```
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Access the application by visiting http://localhost:4200 in your web browser.
 
-## Running end-to-end tests
+## Built With
+- Angular 15.0.0
+- Angular Material
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributing
+If you are interested in contributing to TheRecipeHub, please submit a pull request with your changes.
 
-## Further help
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/PointsHunters/TheRecipeHub/blob/master/LICENSE) file for details.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Acknowledgments
+Inspiration for this project came from a love of cooking and the desire to have a convenient and easy-to-use recipe collection.
+Special thanks to all the contributors who have helped make TheRecipeHub a reality.
