@@ -1,57 +1,33 @@
-<!-- <mat-grid-list cols="1" rowHeight="10:1">
-    <mat-grid-tile class="form">
-        <mat-form-field appearance="outline">
-            <mat-label>Username</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary">Save</button>
-    </mat-grid-tile>
-</mat-grid-list> -->
-
-<form [formGroup]="profileForm" class="form-container">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Profile Information</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <div class="row">
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Username</mat-label>
-                        <input formControlName="username" matInput placeholder="Username">
-                        <!-- <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error> -->
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Fullname</mat-label>
-                        <input formControlName="fullname" matInput placeholder="Fullname">
-                        <!-- <mat-error *ngIf="fullname.invalid">{{getErrorMessage()}}</mat-error> -->
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input formControlName="email" matInput placeholder="Email">
-                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input formControlName="password" matInput placeholder="Password">
-                        <!-- <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> -->
-                    </mat-form-field>
-                </div>
-                <div>
-                    <button (click)="saveForm()" mat-raised-button color="primary">Update profile</button>
-                </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
-</form>
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-xl-6">
+    <form (submit)="saveProfile()">
+      <div class="mb-3">
+        <label for="profile-picture" class="form-label">Profile Picture</label>
+        <input id="profile-picture" name="avatar" type="file" accept="image/jpeg, image/png" class="form-control" [disabled]="!editMode" (change)="onFileSelected($event)">
+        <img class="rounded-circle mt-2" [src]="avatar" alt="Profile Picture" width="100" height="100">
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input id="username" name="username" type="text" class="form-control" [(ngModel)]="user.username" [disabled]="!editMode">
+        <span>{{user.username}}</span>
+      </div>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Fullname</label>
+        <input id="fullname" name="fullname" type="text" class="form-control" [(ngModel)]="user.fullname" [disabled]="!editMode">
+        <span>{{user.fullname}}</span>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="email" class="form-control" [(ngModel)]="user.email" [disabled]="!editMode">
+        <span>{{user.email}}</span>
+      </div>
+      <div class="mb-3" *ngIf="editMode">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" name="password" type="password" class="form-control" [(ngModel)]="user.password">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="startEdit()" *ngIf="!editMode">Edit</button>
+      <button type="button" class="btn btn-secondary" (click)="stopEdit()" *ngIf="editMode">Cancel</button>
+      <button type="submit" class="btn btn-success ms-2" *ngIf="editMode">Save</button>
+    </form>
+  </div>
+</div>

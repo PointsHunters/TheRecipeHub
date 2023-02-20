@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Dashboardz } from '../dashboardz';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-sidenav',
@@ -9,17 +9,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class DashboardSidenavComponent implements OnInit {
 
-  // dashboardz: Dashboardz = {
-  //   home: false,
-  //   profile: false,
-  //   personal: false,
-  //   recipes: false,
-  //   makes: false,
-  //   favorites: false,
-  //   settings: false,
-  // };
+  username = 'Username';
+  email = 'email@email.com';
   
-  constructor() { }
+  constructor(private router: Router) {}
+
+  isActive(path: string): boolean {
+    // console.log(this.router.url,' ',path);
+    return this.router.url === path;
+  }
 
   ngOnInit(): void {
   }

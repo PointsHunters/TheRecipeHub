@@ -1,69 +1,61 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button fxShow.sm="true" fxShow.gt-md="true" fxShow="false" (click)="sidenav.toggle()">
-      <mat-icon *ngIf="!sidenav.opened">
-          menu
-      </mat-icon>
-      <mat-icon *ngIf="sidenav.opened">
-          close
-      </mat-icon>
-    </button> 
-    <span>The Recipe Hub</span>
-    <span class="menu-spacer"></span>
-    <div class="center">
-      <a mat-button [routerLink]="''"> Home </a>
-      <a mat-button [routerLink]="'/recipes'"> Recipes </a>
-      <a mat-button [routerLink]="'/makes'"> Makes </a>
-      <a mat-button [routerLink]="'/contact'"> Contact </a>
-      <a mat-button [routerLink]="'/dashboard'"> Dashboard </a>
-    </div>
-</mat-toolbar>
+<div class="container-fluid border-bottom">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-4 col-lg-3 col-xl-2 d-md-block bg-light sidebar collapse p-0">
+      <div class="position-sticky pt-3 sidebar-sticky d-flex flex-column flex-shrink-0 p-3">
+        <img class="mx-auto mt-3 rounded-circle" src="./assets/img/profile.jpg" width="100" height="100"/>
+        <h4 class="text-center mt-3 fw-normal lh-1">{{username}}</h4>
+        <p class="text-center fs-6 fw-light lh-1">{{email}}</p>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link" [class.link-dark]="!isActive('/user/dashboard')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./dashboard'">
+                <i class="bi bi-clipboard-data me-2" width="16" height="16"></i>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/profile')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./profile'">
+                <i class="bi bi-person me-2" width="16" height="16"></i>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/personal-data')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./personal-data'">
+                <i class="bi bi-list-ul me-2" width="16" height="16"></i>
+                Personal Data
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/my-recipes')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./my-recipes'">
+                <i class="bi bi-database me-2" width="16" height="16"></i>
+                My Recipes
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/my-makes')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./my-makes'">
+                <i class="bi bi-database me-2" width="16" height="16"></i>
+                My Makes
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/favorites')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./favorites'">
+                <i class="bi bi-heart me-2" width="16" height="16"></i>
+                Favorites
+              </a>
+            </li>
+            <hr>
+            <li>
+              <a class="nav-link" [class.link-dark]="!isActive('/user/settings')" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'./settings'">
+                <i class="bi bi-sliders me-2" width="16" height="16"></i>
+                Settings
+              </a>
+            </li>
+        </ul>
+      </div>
+    </nav>
 
-<mat-sidenav-container  fxShow.sm="false" fxShow.gt-md="false" fxShow="true">
-    <mat-sidenav #sidenav="matSidenav" mode="side" opened="true" class="mat-elevation-z8">
-        <img class="avatar mat-elevation-z8" src="./assets/img/profile.jpg" />
-
-        <h4 class="name">John Smith</h4>
-        <p class="designation">Software Engineer</p>
-
-        <mat-divider></mat-divider>
-        
-        <!-- [class.active]="dashboardz.home === true" -->
-        <button mat-button class="menu-button active" [routerLink]="'./'"> 
-            <mat-icon>dashboard</mat-icon>
-            <span>Dashboard</span>
-        </button>
-        <button mat-button class="menu-button" [routerLink]="'./profile'">
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
-        </button>
-        <button mat-button class="menu-button" [routerLink]="'./personal-data'">
-            <mat-icon>manage_accounts</mat-icon>
-            <span>Personal Data</span>
-        </button>
-        <button mat-button class="menu-button" [routerLink]="'./my-recipes'">
-            <mat-icon>list_alt</mat-icon>
-            <span>My Recipes</span>
-        </button>
-        <button mat-button class="menu-button" [routerLink]="'./my-makes'">
-            <mat-icon>list_alt</mat-icon>
-            <span>My Makes</span>
-        </button>
-        <button mat-button class="menu-button" [routerLink]="'./favorites'">
-            <mat-icon>favorite</mat-icon>
-            <span>Favorites</span>
-        </button>
-
-        <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button">
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-        </button>
-
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="content mat-elevation-z8">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    <main class="col-md-8 col-lg-9 col-xl-10 ms-sm-auto px-md-4 py-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

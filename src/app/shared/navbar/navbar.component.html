@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="''">TheRecipeHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!-- <a class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="''">Home</a> -->
+          <a class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'/recipes'">Recipes</a>
+          <a class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'/makes'">Makes</a>
+          <a class="nav-link" routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="'/contact'">Contact</a>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<header class="p-3 border-bottom navbar">
+  <div class="container d-flex align-items-center flex-column flex-md-row justify-content-between justify-content-md-end">
+    <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-md-end" [class.w-100]="isScreenMdOrLarger">
+      <form class="col-12 col-md-auto mb-3 mb-md-0 me-md-3" role="search">
+        <!-- Search by recipe, ingredient or keyword -->
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        <!-- <div class="input-group">
+          <div class="input-group-text bg-transparent border-right-0"><i class="bi bi-search"></i></div>
+          <input class="form-control py-2 border-left-0 border" type="search" placeholder="Search..." aria-label="Search">
+        </div> -->
+      </form>
+    </div>
+    <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-md-end" [class.w-100]="isScreenMdOrLarger">
+      <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="text-end" *ngIf="!userAuthStatus">
+        <button type="button" class="btn btn-outline-primary me-2" (click)="userAuth()">Login</button>
+        <button type="button" class="btn btn-primary">Sign-up</button>
+      </div>
+      <div class="dropdown text-end" *ngIf="userAuthStatus">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="./assets/img/profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+          <span class="mx-1">Username</span>
+        </a>
+        <ul class="dropdown-menu text-small">
+          <li><a class="dropdown-item" [routerLink]="'user/dashboard'">Dashboard</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/profile'">Profile</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/personal-data'">Personal Data</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/my-recipes'">My Recipes</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/my-makes'">My Makes</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/favorites'">Favorites</a></li>
+          <li><a class="dropdown-item" [routerLink]="'user/settings'">Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item btn" (click)="userAuth()">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
