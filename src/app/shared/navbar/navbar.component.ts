@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CurrentRouteService } from '../../current-route.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +12,10 @@ export class NavbarComponent implements OnInit {
 
   userAuthStatus = false;
   public isScreenMdOrLarger: boolean = false;
-
-  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {}
-
+  public currentRoute: string = '';
+  
+  constructor(private router: Router, private breakpointObserver: BreakpointObserver, private currentRouteService: CurrentRouteService) {}
+  
   ngOnInit(): void {
 
     const screenWidth = window.innerWidth;
@@ -25,6 +27,10 @@ export class NavbarComponent implements OnInit {
       // console.log('Viewport size: SM or XS');
       this.isScreenMdOrLarger = true;
     }
+
+    this.currentRouteService.currentRoute$.subscribe(route => {
+      this.currentRoute = route;
+    });
   }
 
   userAuth() {

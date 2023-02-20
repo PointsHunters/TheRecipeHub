@@ -27,8 +27,8 @@
         </div> -->
       </form>
     </div>
-    <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-md-end" [class.w-100]="isScreenMdOrLarger">
-      <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="d-flex flex-wrap align-items-center justify-content-md-end" [class.w-100]="isScreenMdOrLarger" [class.justify-content-between]="currentRoute === 'user'" [class.justify-content-end]="!(currentRoute === 'user')">
+      <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" *ngIf="currentRoute === 'user'">
         <span class="navbar-toggler-icon"></span>
       </button>
 

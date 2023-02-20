@@ -22,14 +22,14 @@ export class CurrentRouteService {
     ).subscribe((event: NavigationEnd) => {
       // Splitting the URL to get route parts
       const urlParts = event.url.split('/');
-      // Finding the index of the "dashboard" route
-      const dashboardIndex = urlParts.indexOf('dashboard');
+      // Finding the index of the "user" route
+      const userIndex = urlParts.indexOf('user');
 
-      // If "dashboard" route is present in URL, set current route as "dashboard"
-      if (dashboardIndex >= 0) {
-        this.currentRouteSubject.next('dashboard');
+      // If "user" route is present in URL, set current route as "user"
+      if (userIndex >= 0) {
+        this.currentRouteSubject.next('user');
       } 
-      // If "dashboard" route is not present, set current route as the first route part after the domain name
+      // If "user" route is not present, set current route as the first route part after the domain name
       else {
         this.currentRouteSubject.next(urlParts[1]);
       }
