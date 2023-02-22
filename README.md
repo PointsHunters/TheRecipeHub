@@ -32,7 +32,8 @@ ng serve
 
 ## Built With
 - Angular 15.0.0
-- Angular Material
+- Bootstrap 5.3.0-alpha1
+- Bootstrap Icons 1.10.3
 
 ## Contributing
 If you are interested in contributing to TheRecipeHub, please submit a pull request with your changes.
