@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { CurrentRouteService } from '../../current-route.service';
+import { CurrentRouteService } from '../../services/current-route/current-route.service';
 
 @Component({
   selector: 'app-navbar',

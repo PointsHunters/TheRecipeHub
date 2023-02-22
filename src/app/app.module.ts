@@ -5,9 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SharedModule } from './shared/shared.module';
+// Components
+import { ComponentsModule } from './components/components.module';
+//Pages
+import { PagesModule } from './pages/pages.module';
 
+// Services
 import { HttpClientModule } from '@angular/common/http';
+import { CurrentRouteService } from "./services/current-route/current-route.service";
+import { ThemeService } from "./services/theme/theme.service";
 
 @NgModule({
   declarations: [
@@ -18,9 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
+    ComponentsModule,
+    PagesModule,
   ],
-  providers: [],
+  providers: [
+    CurrentRouteService,
+    ThemeService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

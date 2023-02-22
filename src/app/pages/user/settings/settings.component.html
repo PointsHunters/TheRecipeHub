@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-6">
+        <form>
+            <div>
+                <h5>My Settings</h5>
+                <hr>
+            </div>
+            <div class="mb-3 d-flex flex-row align-items-top justify-content-between">
+                <div class="d-flex flex-column">
+                    <h6 class="">Appereance</h6>
+                    <p class="m-0">Customize how TheRecipeHub looks on your device.</p>
+                </div>
+                <div>
+                    <div role="group" aria-label="Basic radio toggle button group" [ngClass]="{'btn-group': isScreenSmOrLarger, 'btn-group-vertical': !isScreenSmOrLarger}">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" [checked]="theme === 'light'">
+                        <label class="btn btn-outline-primary" for="btnradio1" (click)="setTheme('light')">Light</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" [checked]="theme === 'dark'">
+                        <label class="btn btn-outline-primary" for="btnradio2" (click)="setTheme('dark')">Dark</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" [checked]="theme === 'system'">
+                        <label class="btn btn-outline-primary" for="btnradio3" (click)="setTheme('system')">System</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
