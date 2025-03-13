@@ -1,1 +1,86 @@
-<p>personal-data works!</p>
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-6">
+      <!-- (submit)="saveProfile()" -->
+      <form> 
+        <input name="isScreenSize" [(ngModel)]="isScreenSize" hidden>
+        <div>
+            <h5>My Personal Data</h5>
+            <hr>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between">
+            <div class="d-flex flex-column">
+                <h6 class="">Fullname</h6>
+                <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+            </div>
+            <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+                <!-- <label for="fullname" class="form-label">Fullname</label> -->
+                <input id="fullname" name="fullname" type="text" class="form-control" [(ngModel)]="user.fullname" [disabled]="!(personaldata.GetEdit())">
+                <!-- <span>{{user.fullname}}</span> -->
+            </div>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between">
+            <div class="d-flex flex-column">
+                <h6 class="">Email</h6>
+                <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+            </div>
+            <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+              <!-- <label for="email" class="form-label">Email</label> -->
+              <input id="email" name="email" type="email" class="form-control" [(ngModel)]="user.email" [disabled]="!(personaldata.GetEdit())">
+              <!-- <span>{{user.email}}</span> -->
+            </div>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between" *ngIf="personaldata.GetEdit()">
+          <div class="d-flex flex-column">
+              <h6 class="">Password</h6>
+              <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+          </div>
+          <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <input id="password" name="password" type="password" class="form-control" [(ngModel)]="user.password">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="personaldata.Show()" *ngIf="!(personaldata.GetEdit())">Edit</button>
+        <button type="button" class="btn btn-secondary" (click)="personaldata.Show()" *ngIf="personaldata.GetEdit()">Cancel</button>
+        <button type="submit" class="btn btn-success ms-2" (click)="personaldata.Show()" *ngIf="personaldata.GetEdit()">Save</button>
+        <div class="mt-5">
+          <h5>My Password</h5>
+          <hr>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between">
+            <div class="d-flex flex-column">
+                <h6 class="">New Password</h6>
+                <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+            </div>
+            <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+                <!-- <label for="newPassword" class="form-label">New Password</label> -->
+                <input id="newPassword" name="newPassword" type="password" class="form-control" [(ngModel)]="user.newpassword" [disabled]="!(updatepassword.GetEdit())">
+                <!-- <span>{{user.newPassword}}</span> -->
+            </div>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between">
+          <div class="d-flex flex-column">
+              <h6 class="">Confirm New Password</h6>
+              <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+          </div>
+          <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+              <!-- <label for="confirmNewPassword" class="form-label">New Password</label> -->
+              <input id="confirmNewPassword" name="confirmNewPassword" type="password" class="form-control" [(ngModel)]="user.confirmnewpassword" [disabled]="!(updatepassword.GetEdit())">
+              <!-- <span>{{user.confirmNewPassword}}</span> -->
+          </div>
+        </div>
+        <div class="mb-3 d-flex flex-column flex-sm-row align-items-top justify-content-between" *ngIf="updatepassword.GetEdit()">
+          <div class="d-flex flex-column">
+              <h6 class="">Old Password</h6>
+              <!-- <p class="m-0">Customize how TheRecipeHub looks on your device.</p> -->
+          </div>
+          <div [ngClass]="{'w-50':!isScreenSize,'w-100':isScreenSize}">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <input id="password" name="password" type="password" class="form-control" [(ngModel)]="user.password">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="updatepassword.Show()" *ngIf="!(updatepassword.GetEdit())">Edit</button>
+        <button type="button" class="btn btn-secondary" (click)="updatepassword.Show()" *ngIf="updatepassword.GetEdit()">Cancel</button>
+        <button type="submit" class="btn btn-success ms-2" (click)="updatepassword.Show()" *ngIf="updatepassword.GetEdit()">Save</button>
+      </form>
+    </div>
+  </div>

@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 interface UserProfile {
   avatar: string;
   username: string;
-  fullname: string;
-  email: string;
   password?: string;
 }
 
@@ -18,8 +16,6 @@ export class ProfileComponent {
   user: UserProfile = {
     avatar: '',
     username: 'Username',
-    fullname: 'Fullname',
-    email: 'email@email.com',
     password: ''
   };
   editMode = false;

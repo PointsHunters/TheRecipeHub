@@ -37,9 +37,9 @@
         <button type="button" class="btn btn-primary">Sign-up</button>
       </div>
       <div class="dropdown text-end" *ngIf="userAuthStatus">
-        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="d-block text-decoration-none dropdown-toggle dropdown-item" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="./assets/img/profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
-          <span class="mx-1">Username</span>
+          <span class="ms-2">Username</span>
         </a>
         <ul class="dropdown-menu text-small">
           <li><a class="dropdown-item" [routerLink]="'user/dashboard'">Dashboard</a></li>
